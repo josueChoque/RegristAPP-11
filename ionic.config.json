@@ -1,0 +1,7 @@
+{
+  "name": "RegristAPP",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

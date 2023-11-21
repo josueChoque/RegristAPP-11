@@ -1,0 +1,57 @@
+<ion-content [fullscreen]="true">
+  <div class="logo">
+    <img  src="../../assets/logoapp_20230914_210644_0000.png" alt="logo">
+  </div>
+  <img src="../../assets/triangulo.png" alt="triangulo" id="triangulo">
+  <div class="title">
+    Iniciar sesion
+  </div>
+  <ion-list>
+    <ion-input [(ngModel)]="user.usuario" label="Usuario" label-placement="floating"   placeholder="juanito" type="Usuario" class="user" ></ion-input>
+    <ion-input [(ngModel)]="user.password" label="Contraseña" label-placement="floating"   placeholder="Contraseña" type="{{ passwordVisible ? 'text' : 'password' }}" class="user"></ion-input>
+  </ion-list>
+  <div class="center-button">
+    <ion-button (click)="informacionUsuario()" size="small" shape="round"  class="color">Ingresar</ion-button>
+  </div>
+  <br>
+  <div class="button-center">
+    <ion-button id="open-modal" shape="round" size="small" class="color">Registrarse
+    </ion-button>
+  </div>
+  
+  <mat-progress-bar class="colormat" mode="indeterminate"></mat-progress-bar>
+
+  <div>
+    <h1>{{mensaje}}</h1>
+  </div>
+  <ion-alert trigger="present-alert" header="Registro" subHeader="{{mensaje}}" [buttons]="alertaButtons"></ion-alert>
+
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="Salir()">Salir</ion-button>
+          </ion-buttons>
+          <ion-title>Registrarse</ion-title>
+                    
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-input [(ngModel)]="user.usuario" label="Nombre Usuario" labelPlacement="floating"
+            placeholder="Ingrese un Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="user.password" label="Contraseña" type="password" labelPlacement="floating"
+            placeholder="Crea una Contraseña"></ion-input>
+        </ion-item>
+        <ion-button class="reg" (click)="confirmarUsuario()" [strong]="true">Confirmar</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  
+</ion-content>
+<ion-footer>
+  <button (click)="redirectToRestablecer()" class="olvi">¿Olvidaste tu Contaseña?</button>
+</ion-footer>

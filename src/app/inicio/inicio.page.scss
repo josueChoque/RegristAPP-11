@@ -1,0 +1,20 @@
+/*fondo de pantalla*/
+ion-content{
+    --background: rgb(98, 5, 219);
+}
+#Tittle{
+    display: flex;
+    font-size: 8vh;
+    margin-top: 15vh;
+    margin-left: 5vh;
+    color: white;
+    font-weight: bold;
+}
+ion-label{
+    display: flex;
+    font-size: 5vh;
+    margin-top: 10vh;
+    margin-left: 18vh;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,29 @@
+ion-content{
+    --background: rgb(98, 5, 219);
+}
+ion-title{
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*Diseño del buton ingresar*/
+
+ion-list{
+  background-color: transparent;
+  position: absolute; 
+  top: 250px; 
+  left: 50px; 
+  font-size: 20px;
+  color: blanchedalmond;
+}
+.center-button{
+  margin-top: 80%;
+  margin-left: 35%;
+  
+}
+.error-message{
+  color: black;
+  font-size: 20px;
+  margin-top: -150px;
+}

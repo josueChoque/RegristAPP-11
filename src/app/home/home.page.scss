@@ -1,0 +1,62 @@
+ion-content{
+  --background: rgb(98, 5, 219);
+}
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.button-ingr{
+  width: 140px;
+  height: 70px;
+  background-color: azure;
+  color: rgb(98, 5, 219);
+  border-radius: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  margin-top: 50vh;
+  position: absolute;
+  margin-left: 30%;
+}
+.logo{
+  position: absolute;
+  margin-top: 40%;
+  margin-left: 10%;
+}
+.inferior{
+  position: absolute;
+  height: 25%;
+  margin-top: 161%;
+  max-width: 100%; 
+  max-height: 100%; 
+  min-width: 50px;
+  min-height: 50px;
+}
+.superior{
+  height: 25%;
+  margin-top: 0%;
+  margin-left: 50%;
+  max-width: 100%; 
+  max-height: 100%; 
+  min-width: 50px;
+  min-height: 50px;
+}
+@media screen and (max-width: 768px ){
+  .clase-elemento{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px ){
+  .logo{
+    width: 80%;
+  }
+}
