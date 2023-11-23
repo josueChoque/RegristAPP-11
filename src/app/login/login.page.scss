@@ -2,10 +2,12 @@
 ion-content{
     --background: rgb(98, 5, 219);
 }
+
 /*imagen*/
 #triangulo{
   margin-top: -10%;
 }
+
 /*Mensaje*/
 h1{
   display: flex;
@@ -13,17 +15,19 @@ h1{
   font-size: 20px;
   margin-left: 8vh;
 }
+
 /*diseño del logo*/
 .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 290px;
-    margin-left: 30px;
-    margin-top: -250px;
-  }
-  /*diseño del iniciar session*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 290px;
+  margin-left: 30px;
+  margin-top: -250px;
+}
+
+/*diseño del iniciar session*/
 .title{
     font-size: 50px;
     color: white;
@@ -33,10 +37,12 @@ h1{
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*color del input*/
 .user{
-    color: rgba(255, 255, 255, 0.494);
+  color: rgba(255, 255, 255, 0.494);
 }
+
 /* lista de usuario*/
 ion-list.session{
   background-color: transparent;
@@ -46,8 +52,8 @@ ion-list.session{
   left: 4vh;
   width: 300px;
 }
-/*Diseño del buton ingresar*/
 
+/*Diseño del buton ingresar*/
 .center-button{
   margin-top: 25%;
   margin-left: 35%;
@@ -57,30 +63,6 @@ ion-list.session{
   margin-left: 32%;
 }
 
-/*.center-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: -100%;
-  }
-.button-ingr{
-  width: 140px;
-    height: 70px;
-    background-color: #993beb;
-    color: white;
-    border-radius: 48%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 30px;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    outline: none;
-  font-weight: bold;
-}*/
 /*button de olvidaste la contraseña*/
 ion-footer{
   background-color: #6e16bb;
@@ -94,37 +76,25 @@ ion-footer{
   color: white;
   font-size: 20px;
 }
-.colormat{
-  background-color: yellow;
-}
+
 /*bar*/
 mat-progress-bar.colormat{
   margin-top: -25%;
 }
-.avatar{
-  transition: transform is linear;
+.colormat{
+  background-color: yellow;
 }
-.avatar.rotate{
-  transform: rotate(360deg);
-}
+/* diseño de button para confirmar el registro*/
 .reg{
   display: flex;
   margin-top: 10vh;
 }
+
+/* lugar del registro*/
 ion-item{
   top: 8vh;
 }
 /* ajuste el lugar del seleccion del rol */
 ion-item.rol {
   margin-top: -380px; 
-}
-@media screen and (max-width: 768px ){
-  .clase-elemento{
-    font-size: 14px;
-  }
-  }
-@media screen and (max-width: 768px ){
-  .imagen{
-    width: 80%;
-  }
 }
