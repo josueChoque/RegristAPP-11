@@ -37,7 +37,8 @@ h1{
 .user{
     color: rgba(255, 255, 255, 0.494);
 }
-ion-list{
+/* lista de usuario*/
+ion-list.session{
   background-color: transparent;
   position: absolute;
   font-size: 20px;
@@ -48,7 +49,7 @@ ion-list{
 /*Diseño del buton ingresar*/
 
 .center-button{
-  margin-top: -70%;
+  margin-top: 25%;
   margin-left: 35%;
 }
 .button-center{
@@ -96,8 +97,9 @@ ion-footer{
 .colormat{
   background-color: yellow;
 }
-mat-progress-bar{
-  top: -19%;
+/*bar*/
+mat-progress-bar.colormat{
+  margin-top: -25%;
 }
 .avatar{
   transition: transform is linear;
@@ -111,6 +113,10 @@ mat-progress-bar{
 }
 ion-item{
   top: 8vh;
+}
+/* ajuste el lugar del seleccion del rol */
+ion-item.rol {
+  margin-top: -380px; 
 }
 @media screen and (max-width: 768px ){
   .clase-elemento{

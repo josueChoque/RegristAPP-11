@@ -12,6 +12,7 @@ import { AlertController } from '@ionic/angular';
 export class InicioPage implements OnInit {
   isSupported = false;
   barcodes: Barcode[] = [];
+  
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private authGuard: AuthGuard, private alertController: AlertController) { }
   public user = {
     usuario: "",
@@ -53,5 +54,5 @@ export class InicioPage implements OnInit {
     });
     await alert.present();
   }
-
+  
 }

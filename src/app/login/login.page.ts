@@ -1,7 +1,7 @@
 import { Component, OnInit,ElementRef ,ViewChild } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AutentificarService } from '../Servicios/autentificar.service';
-import { IonModal, IonCard } from '@ionic/angular';
+import { IonModal, IonCard, ActionSheetController, ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +14,8 @@ export class LoginPage implements OnInit {
   passwordVisible: boolean = false;
   password: string = '';
   isRotated = false;
+ 
+  public selectedRole: string = "Seleccionar rol";
   togglePasswordVisibility(){
     this.passwordVisible = !
     this.passwordVisible;
@@ -21,7 +23,7 @@ export class LoginPage implements OnInit {
   toggleRotation() {
     this.isRotated = !this.isRotated;
   }
-  constructor(private router: Router, private auth: AutentificarService) { }
+  constructor(private router: Router, private auth: AutentificarService, private toastController: ToastController ,private actionSheetController: ActionSheetController) { }
   public mensaje = ""
   public alertaButtons = ['OK'];
   redirectToRestablecer(){
@@ -65,5 +67,37 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
+  roleChanged() {
+    console.log("Rol seleccionado:", this.selectedRole);
+    // Puedes realizar acciones adicionales según el rol seleccionado aquí
+  }
+  // seleccion de rol si es profesor o alumno
+  async toggleRole() {
+    const toast = await this.toastController.create({
+      duration: 2000,
+      position: 'bottom'
+    });
 
+    const options = [
+      { label: 'Alumno', value: 'alumno' },
+      { label: 'Profesor', value: 'profesor' }
+    ];
+
+    const actionSheetButtons = options.map(option => {
+      return {
+        text: option.label,
+        handler: () => {
+          this.selectedRole = option.label;
+          toast.message = `Rol seleccionado: ${this.selectedRole}`;
+          toast.present();
+        }
+      };
+    });
+
+    const actionSheet = await this.actionSheetController.create({
+      buttons: actionSheetButtons
+    });
+
+    return await actionSheet.present();
+  }
 }

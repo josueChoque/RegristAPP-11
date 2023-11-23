@@ -6,10 +6,17 @@
   <div class="title">
     Iniciar sesion
   </div>
-  <ion-list>
+  <ion-list class="session">
     <ion-input [(ngModel)]="user.usuario" label="Usuario" label-placement="floating"   placeholder="juanito" type="Usuario" class="user" ></ion-input>
     <ion-input [(ngModel)]="user.password" label="Contraseña" label-placement="floating"   placeholder="Contraseña" type="{{ passwordVisible ? 'text' : 'password' }}" class="user"></ion-input>
   </ion-list>
+ <!-- seleccionar rol alumno o profesor-->
+
+  <ion-item class="rol">
+    <ion-label>Selecciona tu rol:</ion-label>
+    <ion-button (click)="toggleRole()" fill="clear" slot="end">{{ selectedRole }}</ion-button>
+  </ion-item>
+<!-- ---------------------------------------------------------------- -->
   <div class="center-button">
     <ion-button (click)="informacionUsuario()" size="small" shape="round"  class="color">Ingresar</ion-button>
   </div>

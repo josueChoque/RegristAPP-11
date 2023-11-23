@@ -2,19 +2,49 @@
 ion-content{
     --background: rgb(98, 5, 219);
 }
+.logo {
+    position: absolute;
+    top: 10px; /* Ajusta el valor para cambiar la distancia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 200px; /* Ajusta el valor para cambiar el tamaño del logo */
+  }
 #Tittle{
     display: flex;
-    font-size: 8vh;
-    margin-top: 15vh;
-    margin-left: 5vh;
+    font-size: 4vh;
+    margin-top: 0;
     color: white;
     font-weight: bold;
 }
 ion-label{
     display: flex;
-    font-size: 5vh;
-    margin-top: 10vh;
-    margin-left: 18vh;
+    font-size: 4vh;
+    margin-top: 0;
+
     color: white;
     font-weight: bold;
+}
+content-container {
+    position: relative;
+}
+h3{
+    display: flex;
+    margin-top: 10vh;
+}
+.black-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(79, 74, 74);
+    padding: 80px; /* Ajusta el relleno según sea necesario */
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    width: 80%; /* Ajusta el ancho según sea necesario */
+}
+  
+  /* Estilos adicionales para el botón si es necesario */
+.black-box ion-button {
+    margin-top: 20px; /* Ajusta el margen superior del botón según sea necesario */
 }
