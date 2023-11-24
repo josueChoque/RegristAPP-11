@@ -3,6 +3,7 @@ import { AuthGuard } from '../auth.guard';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { AlertController } from '@ionic/angular';
+import { Keyboard } from '@capacitor/keyboard';
 
 @Component({
   selector: 'app-inicio',
