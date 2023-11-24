@@ -68,7 +68,7 @@ export class LoginPage implements OnInit {
     this.auth.register(this.user.usuario, this.user.password);
     this.modal.dismiss(this.user.usuario, 'confirmarUsuario');
   }
-  async confirmarProfesor() {
+  /*async confirmarProfesor() {
     const credencialesCorrectas = await this.auth.autenticarProfesor(
       this.userProfesor.usuario,
       this.userProfesor.password
@@ -80,7 +80,7 @@ export class LoginPage implements OnInit {
     } else {
       console.log('Credenciales incorrectas. Inténtalo de nuevo.');
     }
-  }
+  }*/
 
   ngOnInit() {
   }

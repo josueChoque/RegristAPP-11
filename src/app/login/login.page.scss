@@ -55,14 +55,16 @@ ion-list.session{
 
 /*Diseño del buton ingresar*/
 .center-button{
-  margin-top: 25%;
+  margin-top: -75%;
   margin-left: 35%;
 }
 .button-center{
   margin-top: -4%;
   margin-left: 32%;
 }
-
+.button-profesor{
+  margin-left: 10vh;
+}
 /*button de olvidaste la contraseña*/
 ion-footer{
   background-color: #6e16bb;
@@ -79,7 +81,7 @@ ion-footer{
 
 /*bar*/
 mat-progress-bar.colormat{
-  margin-top: -25%;
+  margin-top: -39%;
 }
 .colormat{
   background-color: yellow;
