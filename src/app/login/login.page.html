@@ -12,10 +12,10 @@
   </ion-list>
  <!-- seleccionar rol alumno o profesor-->
 
-  <ion-item class="rol">
+  <!-- ion-item class="rol">
     <ion-label>Selecciona tu rol:</ion-label>
     <ion-button (click)="toggleRole()" fill="clear" slot="end">{{ selectedRole }}</ion-button>
-  </ion-item>
+  </ion-item-->
 <!-- ---------------------------------------------------------------- -->
 
   <div class="center-button">
@@ -26,14 +26,18 @@
     <ion-button id="open-modal" shape="round" size="small" class="color">Registrarse
     </ion-button>
   </div>
-  
+  <div class="button-profesor">
+    <ion-button  id="open" fill="clear" class="custom-button">
+      Inicia Sesión Profesor
+    </ion-button>
+  </div>
   <mat-progress-bar class="colormat" mode="indeterminate"></mat-progress-bar>
 
   <div>
     <h1>{{mensaje}}</h1>
   </div>
   <ion-alert trigger="present-alert" header="Registro" subHeader="{{mensaje}}" [buttons]="alertaButtons"></ion-alert>
-
+  <!-- Registrarse alumno -->
   <ion-modal trigger="open-modal">
     <ng-template>
       <ion-header>
@@ -58,8 +62,34 @@
       </ion-content>
     </ng-template>
   </ion-modal>
-  
+  <!-- --------------------------------------------------------------------------------- -->
+  <!-- inicio session profesor -->
+  <ion-modal trigger="open">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button >Salir</ion-button>
+          </ion-buttons>
+          <ion-title>Profesor</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="padding">
+        <ion-item>
+          <ion-input [(ngModel)]="userProfesor.usuario" label="Nombre Profesor" labelPlacement="floating"
+            placeholder="Ingrese un Nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="userProfesor.password" label="Contraseña" type="password" labelPlacement="floating"
+            placeholder="Crea una Contraseña"></ion-input>
+        </ion-item>
+        <ion-button class="reg" (click)="confirmarProfesor()" [strong]="true">Confirmar</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
+
+<!-- olvidaste contraseña-->
 <ion-footer>
   <button (click)="redirectToRestablecer()" class="olvi">¿Olvidaste tu Contaseña?</button>
 </ion-footer>
