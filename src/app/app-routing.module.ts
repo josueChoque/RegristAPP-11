@@ -32,7 +32,11 @@ const routes: Routes = [
   },
   {
     path:'**', redirectTo:'/error'
+  },  {
+    path: 'profesor',
+    loadChildren: () => import('./profesor/profesor.module').then( m => m.ProfesorPageModule)
   }
+
 ];
 
 @NgModule({

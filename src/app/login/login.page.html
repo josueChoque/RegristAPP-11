@@ -27,7 +27,7 @@
     </ion-button>
   </div>
   <div class="button-profesor">
-    <ion-button  id="open" fill="clear" class="custom-button">
+    <ion-button  id="open" (click)="redirectToProfesor()" fill="clear" class="custom-button">
       Inicia Sesión Profesor
     </ion-button>
   </div>
@@ -64,7 +64,7 @@
   </ion-modal>
   <!-- --------------------------------------------------------------------------------- -->
   <!-- inicio session profesor -->
-  <ion-modal trigger="open">
+  <!--<ion-modal trigger="open">
     <ng-template>
       <ion-header>
         <ion-toolbar>
@@ -83,11 +83,11 @@
           <ion-input [(ngModel)]="userProfesor.password" label="Contraseña" type="password" labelPlacement="floating"
             placeholder="Crea una Contraseña"></ion-input>
         </ion-item>
-        <ion-button class="reg"  [strong]="true">Confirmar</ion-button>
+        <ion-button class="reg" (click)="redirectToProfesor()" [strong]="true">Confirmar</ion-button>
       </ion-content>
     </ng-template>
   </ion-modal>
-</ion-content>
+</ion-content>-->
 
 <!-- olvidaste contraseña-->
 <ion-footer>

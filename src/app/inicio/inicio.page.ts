@@ -39,6 +39,8 @@ export class InicioPage implements OnInit {
     }
     const { barcodes } = await BarcodeScanner.scan();
     this.barcodes.push(...barcodes);
+
+    this.mostrarMensajeRegistroExitoso();
   }
 
   async requestPermissions(): Promise<boolean> {
@@ -54,5 +56,13 @@ export class InicioPage implements OnInit {
     });
     await alert.present();
   }
-  
+  async mostrarMensajeRegistroExitoso() {
+    const alert = await this.alertController.create({
+      header: 'Éxito',
+      message: 'Registrado exitosamente',
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
+ 
 }

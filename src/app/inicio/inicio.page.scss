@@ -9,6 +9,15 @@ ion-content{
     transform: translateX(-50%);
     max-width: 200px; /* Ajusta el valor para cambiar el tamaño del logo */
   }
+.qr{
+    position: absolute;
+    top: 105%; /* Ajusta el valor para cambiar la distancia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 200px; /* Ajusta el valor para cambiar el tamaño del logo */
+}
+
+
 #Tittle{
     display: flex;
     font-size: 4vh;

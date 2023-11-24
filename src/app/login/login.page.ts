@@ -29,8 +29,8 @@ export class LoginPage implements OnInit {
   redirectToRestablecer(){
     this.router.navigate(['restablecer'])
   }
-  redirectToInicio(){
-    this.router.navigate(['inicio'])
+  redirectToProfesor(){
+    this.router.navigate(['/profesor'])
   }
   user = {
     usuario: "",
