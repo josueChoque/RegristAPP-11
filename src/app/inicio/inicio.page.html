@@ -16,19 +16,22 @@
         <ion-input type="text" [value]="barcode.rawValue"></ion-input>
         </ion-item>
     </ion-list-->
-    <ion-button (click)="scan()" >Scannear</ion-button>
+    <div>
+    <ion-button class="scann" (click)="scan()" >Scannear</ion-button>
     <!-- <ion-button (click)="scan()" [disabled]="!isSupported">Scannear</ion-button>-->
+    </div>
   </div>
+  
   <ion-menu side="end" contentId="main-content">
     
-    <ion-content class="ion-padding"></ion-content>
-    <div class="registro">
+    <ion-content></ion-content>
+   
       <ion-button  id="registr" fill="clear" class="custom-button">
         Registro
       </ion-button>
-    </div>
+
   </ion-menu>
-  <div class="ion-page" id="main-content">
+ <div  id="main-content">
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -49,5 +52,5 @@
         </ion-list>
       </ion-content>
     </ng-template>
-  </ion-modal>
+  </ion-modal> 
 </ion-content>
