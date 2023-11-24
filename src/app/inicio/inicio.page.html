@@ -9,12 +9,14 @@
       <img src="../../assets/frame.png" alt="qr">
     </div>
     <h3>scanea aqui para quedar presente</h3>
+    <!-- esto es para que se vea el url de la pagina del qr que escaneas-->
+    <!--ion-list>
+      <ion-item *ngFor="let barcode of barcodes">
+        <ion-label position="stacked">{{ barcode.format }}</ion-label>
+        <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+        </ion-item>
+    </ion-list-->
     <ion-button (click)="scan()" >Scannear</ion-button>
+    <!-- <ion-button (click)="scan()" [disabled]="!isSupported">Scannear</ion-button>-->
   </div>
 </ion-content>
-<!--ion-list>
-  <ion-item *ngFor="let barcode of barcodes">
-    <ion-label position="stacked">{{ barcode.format }}</ion-label>
-    <ion-input type="text" [value]="barcode.rawValue"></ion-input>
-  </ion-item>
-</ion-list-->
