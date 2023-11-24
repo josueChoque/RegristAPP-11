@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { AlertController } from '@ionic/angular';
 import { Keyboard } from '@capacitor/keyboard';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-inicio',
@@ -20,6 +21,15 @@ export class InicioPage implements OnInit {
     password: ""
   }
   ngOnInit() {
+    BarcodeScanner.isSupported().then((result) => {
+      this.isSupported = result.supported;
+
+      // Verifica si es un entorno nativo de Android
+      if (Capacitor.isNative && Capacitor.platform === 'android') {
+        // Llama a la función de instalación del módulo de escáner de códigos de barras de Google
+        this.installGoogleBarcodeScannerModule();
+      }
+    });
     BarcodeScanner.isSupported().then((result) => {
       this.isSupported = result.supported;
     });
@@ -65,5 +75,18 @@ export class InicioPage implements OnInit {
     });
     await alert.present();
   }
- 
+  async installGoogleBarcodeScannerModule(): Promise<void> {
+    try {
+      // Lógica para iniciar la instalación del módulo de escáner de códigos de barras de Google
+      await BarcodeScanner.installGoogleBarcodeScannerModule();
+
+      // Escucha eventos de progreso si es necesario
+      BarcodeScanner.addListener('googleBarcodeScannerModuleInstallProgress', (event) => {
+        console.log('Progress event:', event);
+        // Puedes realizar acciones adicionales basadas en el progreso si es necesario
+      });
+    } catch (error) {
+      console.error('Error installing Google Barcode Scanner module:', error);
+    }
+  }
 }
