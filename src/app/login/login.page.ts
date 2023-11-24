@@ -1,7 +1,7 @@
 import { Component, OnInit,ElementRef ,ViewChild } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AutentificarService } from '../Servicios/autentificar.service';
-import { IonModal, IonCard, ActionSheetController, ToastController} from '@ionic/angular';
+import { IonModal, IonCard, ActionSheetController, ToastController, ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   toggleRotation() {
     this.isRotated = !this.isRotated;
   }
-  constructor(private router: Router, private auth: AutentificarService, private toastController: ToastController ,private actionSheetController: ActionSheetController) { }
+  constructor( private modalController: ModalController, private router: Router, private auth: AutentificarService, private toastController: ToastController ,private actionSheetController: ActionSheetController) { }
   public mensaje = ""
   public alertaButtons = ['OK'];
   redirectToRestablecer(){
@@ -36,6 +36,10 @@ export class LoginPage implements OnInit {
     usuario: "",
     password: ""
   }
+  userProfesor = {
+    usuario: "",
+    password: ""
+  };
 
   informacionUsuario(){
     this.auth.login(this.user.usuario, this.user.password).then(()=> {
@@ -56,13 +60,26 @@ export class LoginPage implements OnInit {
       this.mensaje = ""
     }
   }
-
+  
   Salir(){
     this.modal.dismiss(null,'Salir');
   }
   confirmarUsuario(){
     this.auth.register(this.user.usuario, this.user.password);
     this.modal.dismiss(this.user.usuario, 'confirmarUsuario');
+  }
+  async confirmarProfesor() {
+    const credencialesCorrectas = await this.auth.autenticarProfesor(
+      this.userProfesor.usuario,
+      this.userProfesor.password
+    );
+  
+    if (credencialesCorrectas) {
+      await this.modalController.dismiss();
+      this.router.navigate(['/profesor']);
+    } else {
+      console.log('Credenciales incorrectas. Inténtalo de nuevo.');
+    }
   }
 
   ngOnInit() {
